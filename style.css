@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  transition: all 0.2s linear;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(90deg, var(--card-border-color),var(--bg-code));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-blue);
+}
+:root {
+  /* --primary: #621a9a; */
+  --primary-color: #571089;
+  --primary-light: #f700f7;
+  --primary-hover: #ac4ff4;
+  --primary-blue: #3f37c9;
+  --secondary-color: #0096c7;
+  --gray: #3e4152;
+  --black-bg: #000814;
+  --bg-code: #fafafa;
+  --secondary-hover: #00ffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --cta-color: #7e17c8;
+  --wishlist: #ae2012;
+  --shadow-card: 0 0 12px 0 var(--primary-color);
+  --shadow-colors: rgba(0, 0, 0, 0.616);
+  --secondary-colors: #274156;
+  --secondary-active-color: #1e3344;
+  --card-border-color: #9e9eff;
+  --card-color: #001219;
+  --filled-green: #2e7d32;
+  --light-gray: #d8d8d8;
+}
+
+h1{
+  text-align: center;
+  margin: 5rem auto;
+  font-size: 2.8rem;
+  color: var(--primary-color);
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.inputs{
+  width: 80%;
+  border: 2px solid var(--black-bg);
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+label{
+  font-size: 2.1rem;
+  display: block;
+  margin: 0.8rem 1.2rem;
+}
+input{
+  width: 40%;
+  display: block;
+  padding: 1rem;
+  margin: 1.25rem auto;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+button.go-btn{
+  margin: 1.4rem;
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  border-radius: 1rem;
+  color: var(--bg-code);
+  background: var(--primary-hover);
+  font-size: 1.8rem;
+  opacity: 1;
+}
+
+button.go-btn:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.error{
+  font-size: 1.58rem;
+  font-weight: bold;
+}
+  section{
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  .floor{
+    /* background: var(--blue); */
+    /* margin: 0.5rem; */
+    border-bottom: 2px solid var(--card-color);
+    padding: 1rem;
+    position: relative;
+    height: 125px;
+  }
+
+  .flex-sides{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+  }
+
+   h3{
+    font-size: 1.8rem;
+   }
+
+  .btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .btn{
+    color: var(--bg-code);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .btn-up{
+    margin: 0.4rem;
+    background: var(--primary-color);
+  }
+
+  .fa-sharp{
+    padding:0.4rem 0.8rem;
+    font-size: 1.8rem;
+  }
+
+  .btn-down{
+    margin: 0.4rem;
+    background: var(--cta-color);
+  }
+
+  #floor-0{
+    display: flex;
+    position: absolute;
+    left: 10rem;
+    bottom: -0.05rem;
+  }
+  
+  .lift{
+    display: flex;
+    width: 12.5rem;
+    height: 12.5rem;
+    border: 2px solid var(--card-color);
+    margin: 0 1.2rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+  }
+  
+  .left-door{
+    background: var(--gray);
+    width: 6rem;
+    margin-right: 0.05rem;
+    border-right: 4px solid var(--card-color);
+    border: 2px solid var(--bg-code);
+  }
+
+  .right-door{
+    background: var(--gray);
+    width: 6rem;
+    margin-left: 0.05rem;
+    border-left: 4px solid var(--card-color);
+    border: 2px solid var(--bg-code);
+  }
+
+  .left-door--animation{
+    animation: moveLeftDoor 5s ease-in-out;
+  }
+  .right-door--animation{
+    animation: moveRightDoor 5s ease-in-out;
+  }
+
+  .moveLiftUp--animation{
+    transition: all 5s;
+  }
+
+  /* @keyframes moveLiftUp {
+    0%{transform: translateY(-18rem)}
+    100%{transform: translateY(0)}
+} */
+
+  @keyframes moveLeftDoor {
+    0%{transform: translateX(0)}
+    50%{transform: translateX(-5.5rem)}
+    100%{transform: translateX(0)}
+}
+
+@keyframes moveRightDoor {
+  0%{transform: translateX(0)}
+  50%{transform: translateX(5.5rem)}
+  100%{transform: translateX(0)}
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 50%;
+  }
+  .lift{
+    width: 10rem;
+    height: 10rem;
+    margin: 0.5rem;
+  }
+}
