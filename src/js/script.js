@@ -183,7 +183,7 @@ const liftMovement = (lift, pos) => {
        // liftsPush.pop()
        liftsPush.shift()
     }
-  }, distance*2000+10000);
+  }, distance*2000+8000);
   
 };
 
@@ -196,7 +196,7 @@ const doorsOpening = (lift, pos) => {
     console.log("door opens up",pos)
     lift.childNodes[0].classList.add("left-door--animation");
     lift.children[1].classList.add("right-door--animation");
-  }, distance * 2000+1000);
+  }, distance * 2000+2500);
 
   setTimeout(() => {
     lift.childNodes[0].classList.remove("left-door--animation");
@@ -204,6 +204,6 @@ const doorsOpening = (lift, pos) => {
     lift.setAttribute("data-status", "free");
     lift.setAttribute("data-current", pos);
     console.log("door closes")
-  }, distance* 2000+6000);
+  }, distance* 2000+8000);
 };
 
