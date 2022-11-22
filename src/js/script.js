@@ -41,7 +41,7 @@ inputs.forEach((inputsEl) => {
 const generateLiftsAndFloors = (e) => {
   e.preventDefault();
   if (inputFloor.value !== "" && inputLift.value !== "") {
-    // gameHide.style.display = "none";
+    gameHide.style.display = "none";
     generateFloors();
     generateLifts();
     hidingLastButtonAndFirstButton(inputFloor.value);
