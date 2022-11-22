@@ -195,10 +195,10 @@ button.go-btn:disabled {
   }
 
   .left-door--animation{
-    animation: moveLeftDoor 5s ease-in-out;
+    animation: moveLeftDoor 2.5s ease-in-out;
   }
   .right-door--animation{
-    animation: moveRightDoor 5s ease-in-out;
+    animation: moveRightDoor 2.5s ease-in-out;
   }
 
   .moveLiftUp--animation{

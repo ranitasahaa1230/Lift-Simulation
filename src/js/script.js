@@ -41,7 +41,7 @@ inputs.forEach((inputsEl) => {
 const generateLiftsAndFloors = (e) => {
   e.preventDefault();
   if (inputFloor.value !== "" && inputLift.value !== "") {
-    gameHide.style.display = "none";
+    // gameHide.style.display = "none";
     generateFloors();
     generateLifts();
     hidingLastButtonAndFirstButton(inputFloor.value);
@@ -170,9 +170,10 @@ const liftMovement = (lift, pos) => {
 
   const distance = Math.abs(Number(lift.dataset.current) - pos);
 
-  lift.classList.add("moveLiftUp--animation");
+  // lift.classList.add("moveLiftUp--animation");
   lift.style.transform = `translateY(-${12.5 * pos}rem)`;
-  lift.style.bottom = `${125 * pos}px`;
+  lift.style.transition= `all ${(distance*2)}s linear`
+  // lift.style.bottom = `${125 * pos}px`;
   // lift.style.transform = `bottom $(distance*2)s`;
   doorsOpening(lift, pos);
   console.log(liftsPush,'mk');
@@ -183,7 +184,7 @@ const liftMovement = (lift, pos) => {
        // liftsPush.pop()
        liftsPush.shift()
     }
-  }, distance*2000+8000);
+  },1000);
   
 };
 
@@ -196,14 +197,13 @@ const doorsOpening = (lift, pos) => {
     console.log("door opens up",pos)
     lift.childNodes[0].classList.add("left-door--animation");
     lift.children[1].classList.add("right-door--animation");
-  }, distance * 2000+2500);
+  }, distance*2000+2000);
 
   setTimeout(() => {
     lift.childNodes[0].classList.remove("left-door--animation");
     lift.children[1].classList.remove("right-door--animation");
     lift.setAttribute("data-status", "free");
     lift.setAttribute("data-current", pos);
-    console.log("door closes")
-  }, distance* 2000+8000);
+  }, distance* 2000+4500);
 };
 
